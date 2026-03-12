@@ -1,6 +1,6 @@
 site_name: Algorithm Journey Notes
 site_description: C++ algorithm course outlines and study notes
-site_url: ""
+site_url: "https://annajcy.github.io/algorithm-journey/"
 repo_name: algorithm-journey
 theme:
   name: material
