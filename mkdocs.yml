@@ -56,5 +56,3 @@ nav:
               - 课程 01：算法学习框架与复杂度: notes/intro/week1/lesson1/content.md
   - 学习技巧:
       - LLM 时代如何更好地学习 Competitive Programming: tips/llm-for-competitive-programming.md
-  - 写作规范:
-      - 教程写作 SOP: writing_style/sop.md
