@@ -1,0 +1,3631 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="C++ algorithm course outlines and study notes">
+      
+      
+      
+      
+        <link rel="prev" href="../extension/">
+      
+      
+        <link rel="next" href="../../notes/intro/week1/lesson1/content/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>挺难 - Algorithm Journey Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Algorithm Journey Notes" class="md-header__button md-logo" aria-label="Algorithm Journey Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Algorithm Journey Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              挺难
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+  课程规划
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../notes/intro/week1/lesson1/content/" class="md-tabs__link">
+          
+  
+  
+  正式讲义
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tips/llm-for-competitive-programming/" class="md-tabs__link">
+          
+  
+  
+  学习技巧
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../writing_style/sop/" class="md-tabs__link">
+          
+  
+  
+  写作规范
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Algorithm Journey Notes" class="md-nav__button md-logo" aria-label="Algorithm Journey Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Algorithm Journey Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课程规划
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    课程规划
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../foundation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    扩展
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    挺难
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    挺难
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阶段说明
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codeforces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        每日 Codeforces 思维题训练
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本阶段知识地图
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程模板
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速跳转
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 01：左偏树基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 02：左偏树进阶与 k 短路背景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 03：带权并查集
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#04" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 04：可持久化线段树基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 05：可持久化线段树专题题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 06：可持久化前缀树
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 3
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#07" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 07：树套树
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 08：树链剖分基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 09：树链剖分进阶
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 4
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 10：树上启发式合并
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11kruskal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 11：Kruskal 重构树
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 12：可持久化并查集与可撤销并查集
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 5
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 13：线段树分治基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 14：线段树分治应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 15：整体二分
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 6
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#16cdq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 16：CDQ 分治基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17cdq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 17：CDQ 分治应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 18：分块专题 I
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 7
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#19-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 19：分块专题 II
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 20：莫队专题 I
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 21：莫队专题 II
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 8
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#22-iii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 22：莫队专题 III
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-iv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 23：莫队专题 IV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 24：虚树
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 9
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 9">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 25：线段树的合并与分裂
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 26：静态点分治
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 27：静态点分治进阶
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 10
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 28：点分树与动态点分治
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-lca-dfn-lca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 29：欧拉序 LCA 与 dfn 序 LCA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 30：边分治与边分树
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 11
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 11">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 31：欧拉路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 32：强连通分量基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 33：强连通分量进阶
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 12
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 12">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 34：割边与边双连通分量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 35：割点与点双连通分量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 36：圆方树
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 13
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 14
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 15
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 16
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 17
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 18
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 19
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 20
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用建议
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    正式讲义
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    正式讲义
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入门
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    入门
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Week 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/intro/week1/lesson1/content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课程 01：算法学习框架与复杂度
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习技巧
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    学习技巧
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tips/llm-for-competitive-programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM 时代如何更好地学习 Competitive Programming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    写作规范
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    写作规范
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../writing_style/sop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教程写作 SOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阶段说明
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codeforces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        每日 Codeforces 思维题训练
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本阶段知识地图
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程模板
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速跳转
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 01：左偏树基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 02：左偏树进阶与 k 短路背景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 03：带权并查集
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#04" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 04：可持久化线段树基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 05：可持久化线段树专题题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 06：可持久化前缀树
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 3
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#07" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 07：树套树
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 08：树链剖分基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 09：树链剖分进阶
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 4
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 10：树上启发式合并
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11kruskal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 11：Kruskal 重构树
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 12：可持久化并查集与可撤销并查集
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 5
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 13：线段树分治基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 14：线段树分治应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 15：整体二分
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 6
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#16cdq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 16：CDQ 分治基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17cdq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 17：CDQ 分治应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 18：分块专题 I
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 7
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#19-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 19：分块专题 II
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 20：莫队专题 I
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 21：莫队专题 II
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 8
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#22-iii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 22：莫队专题 III
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-iv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 23：莫队专题 IV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 24：虚树
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 9
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 9">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 25：线段树的合并与分裂
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 26：静态点分治
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 27：静态点分治进阶
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 10
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 28：点分树与动态点分治
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-lca-dfn-lca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 29：欧拉序 LCA 与 dfn 序 LCA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 30：边分治与边分树
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 11
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 11">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 31：欧拉路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 32：强连通分量基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 33：强连通分量进阶
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 12
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 12">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 34：割边与边双连通分量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 35：割点与点双连通分量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 36：圆方树
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 13
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 14
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 15
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 16
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 17
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 18
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 19
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 20
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用建议
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">挺难阶段<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><a href="../overview/">返回课程总览</a></p>
+</blockquote>
+<h2 id="_2">阶段说明<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>适合人群</td>
+<td>已完成入门、基础、扩展，准备首次系统学习 <code>挺难</code> 专题</td>
+</tr>
+<tr>
+<td>主语言</td>
+<td>C++</td>
+</tr>
+<tr>
+<td>内容范围</td>
+<td>只覆盖 <code>154-194</code> 的 <code>挺难</code> 内容</td>
+</tr>
+<tr>
+<td>前置要求</td>
+<td>已掌握线段树、树上专题、离线思想、扩展数论与高级 DP</td>
+</tr>
+<tr>
+<td>推荐学习方式</td>
+<td>每周 2 节新课 + 1 次复盘/模板重写，先理解结构和离线思想，再做综合题</td>
+</tr>
+<tr>
+<td>题目来源说明</td>
+<td><code>src/</code> 中 Java 代码只作为题目来源和参考实现入口，讲解与模板全部使用 C++</td>
+</tr>
+<tr>
+<td>建议节奏</td>
+<td>20 周完成</td>
+</tr>
+</tbody>
+</table>
+<h2 id="codeforces">每日 Codeforces 思维题训练<a class="headerlink" href="#codeforces" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练定位</td>
+<td>偏 <code>抽象能力 + 多步推导</code>，训练更难的构造、观察规律和复杂分类</td>
+</tr>
+<tr>
+<td>题目级别</td>
+<td><code>Div2 C/D</code></td>
+</tr>
+<tr>
+<td>每日题量</td>
+<td>1 题为主，阶段性少量 2 题</td>
+</tr>
+<tr>
+<td>建议限时</td>
+<td>60-90 分钟</td>
+</tr>
+<tr>
+<td>执行规则</td>
+<td>优先完整独立思考，再写关键思路，再编码，最后复盘；优先选和当前周高级数据结构/离线算法/树论/图论主线接近的题；若超时，也要先写自己的错误方向和正确突破口，再看题解；只在综合题消化周、课程较轻周或状态明显好时，少量加到 2 题</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">本阶段知识地图<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>知识域</th>
+<th>训练类型</th>
+<th>为什么这样排</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Week 1</td>
+<td><code>数据结构</code></td>
+<td><code>结构原理</code>、<code>模板课</code></td>
+<td>从左偏树和带权并查集开始，先把“高级结构”门槛跨过去</td>
+</tr>
+<tr>
+<td>Week 2</td>
+<td><code>数据结构</code></td>
+<td><code>结构原理</code>、<code>专题题</code></td>
+<td>集中学习可持久化线段树和可持久化 Trie</td>
+</tr>
+<tr>
+<td>Week 3</td>
+<td><code>数据结构</code>、<code>树</code></td>
+<td><code>结构原理</code>、<code>模板课</code></td>
+<td>切入树套树和树链剖分这类树上高级结构</td>
+</tr>
+<tr>
+<td>Week 4</td>
+<td><code>树</code>、<code>数据结构</code></td>
+<td><code>结构原理</code>、<code>专题题</code></td>
+<td>继续推进树上启发式合并、重构树、可撤销结构</td>
+</tr>
+<tr>
+<td>Week 5</td>
+<td><code>离线算法/高级技巧</code>、<code>数据结构</code></td>
+<td><code>结构原理</code>、<code>专题题</code></td>
+<td>进入线段树分治和整体二分等离线主线</td>
+</tr>
+<tr>
+<td>Week 6</td>
+<td><code>离线算法/高级技巧</code></td>
+<td><code>结构原理</code>、<code>专题题</code></td>
+<td>继续学习 CDQ 和分块</td>
+</tr>
+<tr>
+<td>Week 7</td>
+<td><code>离线算法/高级技巧</code></td>
+<td><code>专题题</code>、<code>模板课</code></td>
+<td>把分块与莫队体系搭起来</td>
+</tr>
+<tr>
+<td>Week 8</td>
+<td><code>离线算法/高级技巧</code>、<code>树</code></td>
+<td><code>专题题</code>、<code>综合题</code></td>
+<td>收莫队并进入虚树</td>
+</tr>
+<tr>
+<td>Week 9</td>
+<td><code>数据结构</code>、<code>树</code></td>
+<td><code>结构原理</code>、<code>专题题</code></td>
+<td>转向线段树合并分裂和点分治</td>
+</tr>
+<tr>
+<td>Week 10</td>
+<td><code>树</code></td>
+<td><code>专题题</code>、<code>结构原理</code></td>
+<td>继续推进点分树、LCA 进阶、边分治</td>
+</tr>
+<tr>
+<td>Week 11</td>
+<td><code>图论</code></td>
+<td><code>结构原理</code>、<code>模板课</code></td>
+<td>先吃欧拉路径和 SCC</td>
+</tr>
+<tr>
+<td>Week 12</td>
+<td><code>图论</code></td>
+<td><code>结构原理</code>、<code>专题题</code></td>
+<td>完成边双、点双、圆方树收束</td>
+</tr>
+<tr>
+<td>Week 13</td>
+<td><code>数据结构</code></td>
+<td><code>复盘课</code>、<code>模板课</code></td>
+<td>复盘可并/可持久化/可撤销这条结构线</td>
+</tr>
+<tr>
+<td>Week 14</td>
+<td><code>树</code></td>
+<td><code>复盘课</code>、<code>模板课</code></td>
+<td>复盘 HLD、树分治、虚树、LCA 进阶</td>
+</tr>
+<tr>
+<td>Week 15</td>
+<td><code>离线算法/高级技巧</code></td>
+<td><code>复盘课</code>、<code>模板课</code></td>
+<td>复盘线段树分治、整体二分、CDQ、分块</td>
+</tr>
+<tr>
+<td>Week 16</td>
+<td><code>离线算法/高级技巧</code></td>
+<td><code>综合题</code>、<code>复盘课</code></td>
+<td>集中处理莫队和离线算法综合题</td>
+</tr>
+<tr>
+<td>Week 17</td>
+<td><code>树</code></td>
+<td><code>综合题</code>、<code>复盘课</code></td>
+<td>集中处理树分治和树上高级结构综合题</td>
+</tr>
+<tr>
+<td>Week 18</td>
+<td><code>图论</code></td>
+<td><code>综合题</code>、<code>复盘课</code></td>
+<td>集中处理连通性分解和缩点综合题</td>
+</tr>
+<tr>
+<td>Week 19</td>
+<td><code>综合复盘</code></td>
+<td><code>复盘课</code>、<code>模板课</code></td>
+<td>完成挺难阶段模板重写和知识整理</td>
+</tr>
+<tr>
+<td>Week 20</td>
+<td><code>综合复盘</code></td>
+<td><code>复盘课</code></td>
+<td>阶段收束，明确哪些专题需要继续二刷</td>
+</tr>
+</tbody>
+</table>
+<p>每周课程主线之外，持续执行 <code>每日 1 题</code> 的 Codeforces 思维训练，且选题尽量贴合本周主线专题。</p>
+<h2 id="_4">课程模板<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>课程主题</li>
+<li>学习目标</li>
+<li>对应原课</li>
+<li>知识点讲解（C++）</li>
+<li>题目来源（src Java）</li>
+<li>C++ 模板</li>
+<li>习题</li>
+<li>复盘要点</li>
+<li>完成标准</li>
+</ul>
+<p>这条模板用于课程主线；每日 Codeforces 思维题训练按阶段规则单独执行，不展开到 <code>Day 1 ~ Day 7</code>。</p>
+<h2 id="_5">快速跳转<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#week-1">Week 1</a></li>
+<li><a href="#week-2">Week 2</a></li>
+<li><a href="#week-3">Week 3</a></li>
+<li><a href="#week-4">Week 4</a></li>
+<li><a href="#week-5">Week 5</a></li>
+<li><a href="#week-6">Week 6</a></li>
+<li><a href="#week-7">Week 7</a></li>
+<li><a href="#week-8">Week 8</a></li>
+<li><a href="#week-9">Week 9</a></li>
+<li><a href="#week-10">Week 10</a></li>
+<li><a href="#week-11">Week 11</a></li>
+<li><a href="#week-12">Week 12</a></li>
+<li><a href="#week-13">Week 13</a></li>
+<li><a href="#week-14">Week 14</a></li>
+<li><a href="#week-15">Week 15</a></li>
+<li><a href="#week-16">Week 16</a></li>
+<li><a href="#week-17">Week 17</a></li>
+<li><a href="#week-18">Week 18</a></li>
+<li><a href="#week-19">Week 19</a></li>
+<li><a href="#week-20">Week 20</a></li>
+</ul>
+<h2 id="week-1">Week 1<a class="headerlink" href="#week-1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>数据结构</code></td>
+<td><code>结构原理</code>、<code>模板课</code></td>
+<td>从左偏树和带权并查集开始，先建立高级结构的理解地基</td>
+</tr>
+</tbody>
+</table>
+<h3 id="01">课程 01：左偏树基础<a class="headerlink" href="#01" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握可并堆的基本结构</li>
+<li>对应原课：154</li>
+<li>知识点讲解（C++）：左偏树性质、合并操作、删除最值、并查集结合</li>
+<li>题目来源（src Java）：<code>src/class154/Code01_LeftistTree1.java</code>、<code>src/class154/Code01_LeftistTree2.java</code></li>
+<li>C++ 模板：左偏树模板、可并堆模板</li>
+<li>习题：手写左偏树模板；做 1 道可并堆题</li>
+<li>复盘要点：左偏树的核心是“合并优先”</li>
+<li>完成标准：能独立写出 merge 主过程</li>
+</ul>
+<h3 id="02-k">课程 02：左偏树进阶与 k 短路背景<a class="headerlink" href="#02-k" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：继续理解堆上懒更新和更复杂的应用</li>
+<li>对应原课：155</li>
+<li>知识点讲解（C++）：懒标记可并堆、可持久化左偏树、k 短路问题中的堆结构</li>
+<li>题目来源（src Java）：<code>src/class155/Code01_CityCapture1.java</code>、<code>src/class155/Code02_TrickyOperation1.java</code></li>
+<li>C++ 模板：带懒更新左偏树模板</li>
+<li>习题：做 1 道堆上懒更新题</li>
+<li>复盘要点：复杂堆结构的难点在“信息何时下传”</li>
+<li>完成标准：能说明左偏树比普通堆多解决了什么问题</li>
+</ul>
+<h3 id="03">课程 03：带权并查集<a class="headerlink" href="#03" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握带相对关系的集合维护</li>
+<li>对应原课：156</li>
+<li>知识点讲解（C++）：带权并查集、距离/差值关系、矛盾检测、模意义关系维护</li>
+<li>题目来源（src Java）：<code>src/class156/Code01_DerivePartialSums.java</code>、<code>src/class156/Code03_WrongAnswers.java</code>、<code>src/class156/Code04_LegendOfHeroes.java</code></li>
+<li>C++ 模板：带权并查集模板</li>
+<li>习题：做 2 道关系维护题</li>
+<li>复盘要点：并查集节点到父亲的权值含义必须先定义清楚</li>
+<li>完成标准：能独立推导路径压缩时权值如何更新</li>
+</ul>
+<h2 id="week-2">Week 2<a class="headerlink" href="#week-2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>数据结构</code></td>
+<td><code>结构原理</code>、<code>专题题</code></td>
+<td>集中掌握可持久化结构的基本套路和典型问题</td>
+</tr>
+</tbody>
+</table>
+<h3 id="04">课程 04：可持久化线段树基础<a class="headerlink" href="#04" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：建立主席树的基本认知</li>
+<li>对应原课：157</li>
+<li>知识点讲解（C++）：版本根、路径复制、点修改、区间查询、标记永久化</li>
+<li>题目来源（src Java）：<code>src/class157/Code01_PointPersistent1.java</code>、<code>src/class157/Code02_PointPersistent1.java</code></li>
+<li>C++ 模板：主席树基础模板</li>
+<li>习题：做 1 道可持久化区间统计题</li>
+<li>复盘要点：可持久化的核心是“只复制访问路径”</li>
+<li>完成标准：能说明主席树为什么是 <code>O(log n)</code> 新建一个版本</li>
+</ul>
+<h3 id="05">课程 05：可持久化线段树专题题<a class="headerlink" href="#05" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：把基础主席树推广到更复杂的询问</li>
+<li>对应原课：158</li>
+<li>知识点讲解（C++）：第一个出现位置、区间缺失值、离线查询结合主席树</li>
+<li>题目来源（src Java）：<code>src/class158/Code01_FirstTimeSequence1.java</code>、<code>src/class158/Code02_MissingSmallest1.java</code></li>
+<li>C++ 模板：可持久化区间计数模板</li>
+<li>习题：做 2 道主席树应用题</li>
+<li>复盘要点：版本化数组最常见的问题是“在历史状态上做区间查询”</li>
+<li>完成标准：能判断一个题是否适合用主席树</li>
+</ul>
+<h3 id="06">课程 06：可持久化前缀树<a class="headerlink" href="#06" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：理解版本化 Trie 的使用方式</li>
+<li>对应原课：159</li>
+<li>知识点讲解（C++）：前缀 Trie 可持久化、路径异或、字符串树查询</li>
+<li>题目来源（src Java）：<code>src/class159/Code01_MaxXor1.java</code>、<code>src/class159/Code02_StringTree1.java</code></li>
+<li>C++ 模板：可持久化 Trie 模板</li>
+<li>习题：做 1 道可持久化异或查询题</li>
+<li>复盘要点：版本化 Trie 和主席树的思想是一致的</li>
+<li>完成标准：能解释版本根数组的意义</li>
+</ul>
+<h2 id="week-3">Week 3<a class="headerlink" href="#week-3" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>数据结构</code>、<code>树</code></td>
+<td><code>结构原理</code>、<code>模板课</code></td>
+<td>切入树套树和树链剖分，建立树上线性化视角</td>
+</tr>
+</tbody>
+</table>
+<h3 id="07">课程 07：树套树<a class="headerlink" href="#07" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：建立二维数据结构的整体认识</li>
+<li>对应原课：160</li>
+<li>知识点讲解（C++）：线段树套线段树、区间第 k 大、二维偏序查询</li>
+<li>题目来源（src Java）：<code>src/class160/Code01_SegmentWithSegment1.java</code>、<code>src/class160/Code02_QueryKthMaximum1.java</code></li>
+<li>C++ 模板：树套树基础模板</li>
+<li>习题：做 1 道二维查询题</li>
+<li>复盘要点：树套树的关键是“外层划分一维，内层维护另一维”</li>
+<li>完成标准：能说明树套树适合哪类二维问题</li>
+</ul>
+<h3 id="08">课程 08：树链剖分基础<a class="headerlink" href="#08" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握把树上路径拆成若干重链区间</li>
+<li>对应原课：161</li>
+<li>知识点讲解（C++）：重儿子、重链、dfs 序、树上路径转区间</li>
+<li>题目来源（src Java）：<code>src/class161/Code01_HLD1.java</code>、<code>src/class161/Code02_LCA1.java</code></li>
+<li>C++ 模板：树链剖分模板、树上路径查询模板</li>
+<li>习题：手写 HLD；做 1 道树上路径求和题</li>
+<li>复盘要点：树链剖分的价值在于把树问题线性化</li>
+<li>完成标准：能解释 <code>top/dfn/size/son</code> 的含义</li>
+</ul>
+<h3 id="09">课程 09：树链剖分进阶<a class="headerlink" href="#09" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：继续掌握树链剖分上的复杂修改与查询</li>
+<li>对应原课：162</li>
+<li>知识点讲解（C++）：路径加减、子树修改、树上线段树组合</li>
+<li>题目来源（src Java）：<code>src/class162/Code01_GrassPlanting1.java</code>、<code>src/class162/Code02_NationalTour1.java</code></li>
+<li>C++ 模板：HLD + 线段树组合模板</li>
+<li>习题：做 2 道树链剖分题</li>
+<li>复盘要点：先写好树剖框架，再看具体维护信息</li>
+<li>完成标准：能把路径修改或子树查询转成若干区间操作</li>
+</ul>
+<h2 id="week-4">Week 4<a class="headerlink" href="#week-4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>树</code>、<code>数据结构</code></td>
+<td><code>结构原理</code>、<code>专题题</code></td>
+<td>继续推进树上高级结构和可撤销结构</td>
+</tr>
+</tbody>
+</table>
+<h3 id="10">课程 10：树上启发式合并<a class="headerlink" href="#10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握 DSU on Tree 的主线</li>
+<li>对应原课：163</li>
+<li>知识点讲解（C++）：轻重子树处理、大子树保留、小子树清空、子树统计</li>
+<li>题目来源（src Java）：<code>src/class163/Code01_DsuOnTree1.java</code>、<code>src/class163/Code02_ColorBanlance1.java</code></li>
+<li>C++ 模板：DSU on Tree 模板</li>
+<li>习题：做 1 道子树统计题</li>
+<li>复盘要点：这类算法的本质是“时间换空间 + 重复利用大子树结果”</li>
+<li>完成标准：能描述启发式合并的复杂度来源</li>
+</ul>
+<h3 id="11kruskal">课程 11：Kruskal 重构树<a class="headerlink" href="#11kruskal" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：理解 MST 与树上倍增/查询的结合</li>
+<li>对应原课：164</li>
+<li>知识点讲解（C++）：Kruskal 重构树建法、合并点、树上最值查询</li>
+<li>题目来源（src Java）：<code>src/class164/Code01_KruskalRebuild1.java</code>、<code>src/class164/Code02_Training1.java</code></li>
+<li>C++ 模板：Kruskal 重构树模板</li>
+<li>习题：做 1 道重构树题</li>
+<li>复盘要点：重构树本质是把边权层次结构树化</li>
+<li>完成标准：能说明为什么查询能转到重构树上</li>
+</ul>
+<h3 id="12">课程 12：可持久化并查集与可撤销并查集<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握动态连通性中的版本与撤销</li>
+<li>对应原课：165</li>
+<li>知识点讲解（C++）：回滚栈、离线时间分治、可持久化版本管理</li>
+<li>题目来源（src Java）：<code>src/class165/Code01_PersistentUnionFind1.java</code>、<code>src/class165/Code02_UndoUnionFind1.java</code></li>
+<li>C++ 模板：可撤销并查集模板</li>
+<li>习题：做 1 道离线动态连通题</li>
+<li>复盘要点：路径压缩和撤销并查集通常不能同时直接使用</li>
+<li>完成标准：能解释撤销并查集为何通常只按秩合并</li>
+</ul>
+<h2 id="week-5">Week 5<a class="headerlink" href="#week-5" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>离线算法/高级技巧</code>、<code>数据结构</code></td>
+<td><code>结构原理</code>、<code>专题题</code></td>
+<td>进入线段树分治和整体二分这条重离线主线</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13">课程 13：线段树分治基础<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：建立“时间轴 + 区间挂边”的离线思维</li>
+<li>对应原课：166</li>
+<li>知识点讲解（C++）：时间区间建树、边挂在线段树节点、分治递归时加入/撤销</li>
+<li>题目来源（src Java）：<code>src/class166/Code01_SegmentTreeDivideConquer1.java</code>、<code>src/class166/Code02_CheckBipartiteGraph1.java</code></li>
+<li>C++ 模板：线段树分治 + 可撤销并查集模板</li>
+<li>习题：做 1 道动态图判定题</li>
+<li>复盘要点：线段树分治是“按时间做离线分治”</li>
+<li>完成标准：能把一个操作的生效时间转换为区间</li>
+</ul>
+<h3 id="14">课程 14：线段树分治应用<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：继续掌握离线动态查询框架</li>
+<li>对应原课：167</li>
+<li>知识点讲解（C++）：时间分治上的 DP、贡献转移、复杂查询的离线化</li>
+<li>题目来源（src Java）：<code>src/class167/Code01_MuseumRobbery1.java</code>、<code>src/class167/Code02_BlueMoon1.java</code></li>
+<li>C++ 模板：时间分治查询模板</li>
+<li>习题：做 1 道时间轴离线题</li>
+<li>复盘要点：这类题常常不是“新数据结构”，而是“换一个离线视角”</li>
+<li>完成标准：能识别是否能在线段树时间轴上做分治</li>
+</ul>
+<h3 id="15">课程 15：整体二分<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握“按答案分治”的经典离线技巧</li>
+<li>对应原课：168、169</li>
+<li>知识点讲解（C++）：整体二分框架、答案域分治、树状数组辅助统计、动态排名</li>
+<li>题目来源（src Java）：<code>src/class168/Code01_RangeKth1.java</code>、<code>src/class169/Code02_DynamicRankings1.java</code></li>
+<li>C++ 模板：整体二分模板</li>
+<li>习题：做 2 道整体二分题</li>
+<li>复盘要点：整体二分分治的是答案，不是下标</li>
+<li>完成标准：能解释一个查询如何在左右答案区间间归类</li>
+</ul>
+<h2 id="week-6">Week 6<a class="headerlink" href="#week-6" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>离线算法/高级技巧</code></td>
+<td><code>结构原理</code>、<code>专题题</code></td>
+<td>继续推进 CDQ 和分块，建立离线分治的统一视角</td>
+</tr>
+</tbody>
+</table>
+<h3 id="16cdq">课程 16：CDQ 分治基础<a class="headerlink" href="#16cdq" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握偏序统计和时间维分治</li>
+<li>对应原课：170</li>
+<li>知识点讲解（C++）：三维偏序、动态逆序对、CDQ + 树状数组</li>
+<li>题目来源（src Java）：<code>src/class170/Code01_3DPartialOrder1.java</code>、<code>src/class170/Code02_DynamicInversion1.java</code></li>
+<li>C++ 模板：CDQ 分治模板、CDQ + BIT 模板</li>
+<li>习题：做 1 道三维偏序题</li>
+<li>复盘要点：CDQ 解决的是“前面对后面的贡献”</li>
+<li>完成标准：能说明 CDQ 与归并分治的相似点</li>
+</ul>
+<h3 id="17cdq">课程 17：CDQ 分治应用<a class="headerlink" href="#17cdq" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：扩展到更复杂的离线统计问题</li>
+<li>对应原课：171</li>
+<li>知识点讲解（C++）：空间偏序、矩阵型统计、复杂离线贡献</li>
+<li>题目来源（src Java）：<code>src/class171/Code01_MooFest1.java</code>、<code>src/class171/Code02_AiRobots1.java</code></li>
+<li>C++ 模板：CDQ 复杂统计模板</li>
+<li>习题：做 1 道 CDQ 综合题</li>
+<li>复盘要点：先判“是否有天然的时间或顺序维”</li>
+<li>完成标准：能判断一个偏序题是否适合用 CDQ</li>
+</ul>
+<h3 id="18-i">课程 18：分块专题 I<a class="headerlink" href="#18-i" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：建立根号分治/分块的整体认知</li>
+<li>对应原课：172、173</li>
+<li>知识点讲解（C++）：块状数组、块状链表、分块维护排序信息、树上分块</li>
+<li>题目来源（src Java）：<code>src/class172/Code01_GiveAway1.java</code>、<code>src/class173/Code01_Poker1.java</code>、<code>src/class173/Code03_Magnet1.java</code></li>
+<li>C++ 模板：基础分块模板</li>
+<li>习题：做 2 道分块题</li>
+<li>复盘要点：分块是“工程化折中”，不是理论最优结构</li>
+<li>完成标准：能设计块大小并维护块级信息</li>
+</ul>
+<h2 id="week-7">Week 7<a class="headerlink" href="#week-7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>离线算法/高级技巧</code></td>
+<td><code>专题题</code>、<code>模板课</code></td>
+<td>从分块进入莫队，把离线维护思维做实</td>
+</tr>
+</tbody>
+</table>
+<h3 id="19-ii">课程 19：分块专题 II<a class="headerlink" href="#19-ii" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：继续掌握双层分块和根号分治</li>
+<li>对应原课：174、175</li>
+<li>知识点讲解（C++）：双层分块、分块 + 并查集、根号分治、复杂查询</li>
+<li>题目来源（src Java）：<code>src/class174/Code01_FutureDiary1.java</code>、<code>src/class174/Code02_MagicGirl1.java</code>、<code>src/class175/Code02_ArrayQueries1.java</code></li>
+<li>C++ 模板：根号分治模板</li>
+<li>习题：做 2 道根号分治题</li>
+<li>复盘要点：根号分治的关键是把高频/低频情况分开</li>
+<li>完成标准：能给出一个块级预处理方案</li>
+</ul>
+<h3 id="20-i">课程 20：莫队专题 I<a class="headerlink" href="#20-i" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握普通莫队和带修莫队</li>
+<li>对应原课：176</li>
+<li>知识点讲解（C++）：Hilbert/块排序、左右指针移动、带修改时间维</li>
+<li>题目来源（src Java）：<code>src/class176/Code01_MoAlgorithm1.java</code>、<code>src/class176/Code06_MoWithModify1.java</code></li>
+<li>C++ 模板：普通莫队模板、带修莫队模板</li>
+<li>习题：做 1 道普通莫队题；做 1 道带修莫队题</li>
+<li>复盘要点：莫队适用于可增删维护且离线的问题</li>
+<li>完成标准：能解释三维排序下的指针移动</li>
+</ul>
+<h3 id="21-ii">课程 21：莫队专题 II<a class="headerlink" href="#21-ii" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握回滚莫队与树上莫队</li>
+<li>对应原课：177</li>
+<li>知识点讲解（C++）：回滚莫队、树上欧拉序转化、树上询问维护</li>
+<li>题目来源（src Java）：<code>src/class177/Code01_MoAddUndo1.java</code>、<code>src/class177/Code07_MoOnTree1.java</code></li>
+<li>C++ 模板：回滚莫队模板、树上莫队模板</li>
+<li>习题：做 1 道回滚莫队题；做 1 道树上莫队题</li>
+<li>复盘要点：树上莫队常要先把路径或子树转成序列问题</li>
+<li>完成标准：能说明树上莫队为什么需要欧拉序</li>
+</ul>
+<h2 id="week-8">Week 8<a class="headerlink" href="#week-8" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>离线算法/高级技巧</code>、<code>树</code></td>
+<td><code>专题题</code>、<code>综合题</code></td>
+<td>收莫队并切入虚树，开始做跨专题组合题</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-iii">课程 22：莫队专题 III<a class="headerlink" href="#22-iii" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：学习二次离线和更复杂的莫队变体</li>
+<li>对应原课：178</li>
+<li>知识点讲解（C++）：莫队二次离线、逆序对统计、离线分层处理</li>
+<li>题目来源（src Java）：<code>src/class178/Code01_MoOfflineTwice1.java</code>、<code>src/class178/Code02_OfflineInversion1.java</code></li>
+<li>C++ 模板：二次离线莫队模板</li>
+<li>习题：做 1 道二次离线题</li>
+<li>复盘要点：二次离线本质是把难维护的部分再拆一层</li>
+<li>完成标准：能判断什么时候普通莫队不够用</li>
+</ul>
+<h3 id="23-iv">课程 23：莫队专题 IV<a class="headerlink" href="#23-iv" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：通过综合题回收莫队体系</li>
+<li>对应原课：179</li>
+<li>知识点讲解（C++）：复杂统计、综合离线、多技巧拼接</li>
+<li>题目来源（src Java）：<code>src/class179/Code01_NiceDay1.java</code>、<code>src/class179/Code02_SimpleQuery1.java</code>、<code>src/class179/Code08_YnoiCornfield1.java</code></li>
+<li>C++ 模板：莫队综合题 checklist</li>
+<li>习题：做 1 道综合莫队题</li>
+<li>复盘要点：莫队不是单一模板，而是一整类离线维护思想</li>
+<li>完成标准：能总结普通/带修/回滚/树上/二次离线的区别</li>
+</ul>
+<h3 id="24">课程 24：虚树<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握关键点树构造和虚树 DP</li>
+<li>对应原课：180</li>
+<li>知识点讲解（C++）：按 DFS 序排序、栈构建虚树、关键点路径压缩</li>
+<li>题目来源（src Java）：<code>src/class180/Code01_KingdomAndCities1.java</code>、<code>src/class180/Code02_BigProject1.java</code></li>
+<li>C++ 模板：虚树构造模板</li>
+<li>习题：做 1 道虚树题</li>
+<li>复盘要点：虚树的目标是只保留“有用点 + 必要 LCA”</li>
+<li>完成标准：能独立写出虚树构建流程</li>
+</ul>
+<h2 id="week-9">Week 9<a class="headerlink" href="#week-9" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>数据结构</code>、<code>树</code></td>
+<td><code>结构原理</code>、<code>专题题</code></td>
+<td>转向线段树合并分裂和点分治</td>
+</tr>
+</tbody>
+</table>
+<h3 id="25">课程 25：线段树的合并与分裂<a class="headerlink" href="#25" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握可合并线段树和可拆分线段树</li>
+<li>对应原课：181、182</li>
+<li>知识点讲解（C++）：小并大合并、点权合并、区间拆分、权值线段树版本化</li>
+<li>题目来源（src Java）：<code>src/class181/Code01_PromotionCounting1.java</code>、<code>src/class182/Code04_SegmentTreeSplit1.java</code></li>
+<li>C++ 模板：线段树合并模板、线段树分裂模板</li>
+<li>习题：做 1 道合并题；做 1 道分裂题</li>
+<li>复盘要点：核心问题是节点何时新建、何时复用</li>
+<li>完成标准：能说明线段树合并的复杂度为何常是线性的</li>
+</ul>
+<h3 id="26">课程 26：静态点分治<a class="headerlink" href="#26" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握树上路径统计的经典分治</li>
+<li>对应原课：183</li>
+<li>知识点讲解（C++）：找重心、分治递归、跨子树贡献统计</li>
+<li>题目来源（src Java）：<code>src/class183/Code03_Race1.java</code>、<code>src/class183/Code05_CloseVertices1.java</code></li>
+<li>C++ 模板：点分治模板</li>
+<li>习题：做 1 道路径长度统计题</li>
+<li>复盘要点：点分治靠重心保证递归层数</li>
+<li>完成标准：能写出找重心和分治主流程</li>
+</ul>
+<h3 id="27">课程 27：静态点分治进阶<a class="headerlink" href="#27" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：继续处理更复杂的树上路径问题</li>
+<li>对应原课：184</li>
+<li>知识点讲解（C++）：带权条件、路径模式、复杂状态统计</li>
+<li>题目来源（src Java）：<code>src/class184/Code03_Courier1.java</code>、<code>src/class184/Code06_TreeDistance1.java</code></li>
+<li>C++ 模板：点分治统计模板</li>
+<li>习题：做 1 道点分治综合题</li>
+<li>复盘要点：跨子树统计时要避免重复计数</li>
+<li>完成标准：能把一个路径问题拆成“子树内 + 跨子树”</li>
+</ul>
+<h2 id="week-10">Week 10<a class="headerlink" href="#week-10" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>树</code></td>
+<td><code>专题题</code>、<code>结构原理</code></td>
+<td>继续推进点分树、LCA 进阶与边分治</td>
+</tr>
+</tbody>
+</table>
+<h3 id="28">课程 28：点分树与动态点分治<a class="headerlink" href="#28" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：从静态点分治走向动态查询</li>
+<li>对应原课：185</li>
+<li>知识点讲解（C++）：点分树结构、重心祖先链、动态修改与查询</li>
+<li>题目来源（src Java）：<code>src/class185/Code01_Wave1.java</code>、<code>src/class185/Code02_Game1.java</code></li>
+<li>C++ 模板：点分树模板</li>
+<li>习题：做 1 道动态点分治题</li>
+<li>复盘要点：点分树是在分治树上维护动态信息</li>
+<li>完成标准：能解释点分树和静态点分治的区别</li>
+</ul>
+<h3 id="29-lca-dfn-lca">课程 29：欧拉序 LCA 与 dfn 序 LCA<a class="headerlink" href="#29-lca-dfn-lca" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：补齐 LCA 的两种经典替代做法</li>
+<li>对应原课：186</li>
+<li>知识点讲解（C++）：欧拉序 + RMQ、dfn 序性质、不同 LCA 方法的场景比较</li>
+<li>题目来源（src Java）：<code>src/class186/Code01_EulerLCA1.java</code>、<code>src/class186/Code02_DfnLCA1.java</code></li>
+<li>C++ 模板：欧拉序 LCA 模板、RMQ LCA 模板</li>
+<li>习题：做 1 道 LCA 题；比较倍增和欧拉序方法</li>
+<li>复盘要点：LCA 方法选型取决于是否静态、是否需要常数小</li>
+<li>完成标准：能比较三种 LCA 做法</li>
+</ul>
+<h3 id="30">课程 30：边分治与边分树<a class="headerlink" href="#30" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握另一类树分治思路</li>
+<li>对应原课：187</li>
+<li>知识点讲解（C++）：边分治、边分树构造、边权路径统计</li>
+<li>题目来源（src Java）：<code>src/class187/Code01_LongestPathTree1.java</code>、<code>src/class187/Code02_Cobweb1.java</code></li>
+<li>C++ 模板：边分治基础模板</li>
+<li>习题：做 1 道边分治题</li>
+<li>复盘要点：边分治更适合某些路径依赖边的模型</li>
+<li>完成标准：能说明点分治和边分治的差别</li>
+</ul>
+<h2 id="week-11">Week 11<a class="headerlink" href="#week-11" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>图论</code></td>
+<td><code>结构原理</code>、<code>模板课</code></td>
+<td>先把欧拉路径和 SCC 主干模板吃下来</td>
+</tr>
+</tbody>
+</table>
+<h3 id="31">课程 31：欧拉路径<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握有向/无向欧拉路径与欧拉回路</li>
+<li>对应原课：188</li>
+<li>知识点讲解（C++）：存在条件、Hierholzer 算法、字典序路径构造</li>
+<li>题目来源（src Java）：<code>src/class188/Code01_DirectedEuler1.java</code>、<code>src/class188/Code02_UndirectedEuler1.java</code></li>
+<li>C++ 模板：欧拉路径模板</li>
+<li>习题：做 1 道有向图欧拉路径题；做 1 道无向图欧拉回路题</li>
+<li>复盘要点：先判条件，再做路径构造</li>
+<li>完成标准：能实现 Hierholzer 算法</li>
+</ul>
+<h3 id="32">课程 32：强连通分量基础<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握 SCC 分解和缩点</li>
+<li>对应原课：189</li>
+<li>知识点讲解（C++）：Tarjan、SCC 缩点、DAG 化后的 DP/拓扑</li>
+<li>题目来源（src Java）：<code>src/class189/Code01_SCC1.java</code>、<code>src/class189/Code02_SCC1.java</code></li>
+<li>C++ 模板：Tarjan SCC 模板、缩点模板</li>
+<li>习题：做 1 道强连通缩点题</li>
+<li>复盘要点：缩点后的图一定是 DAG</li>
+<li>完成标准：能独立写出 SCC 模板</li>
+</ul>
+<h3 id="33">课程 33：强连通分量进阶<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：继续处理 SCC 之后的图上优化</li>
+<li>对应原课：190</li>
+<li>知识点讲解（C++）：缩点后拓扑 DP、路径价值统计、复杂条件转化</li>
+<li>题目来源（src Java）：<code>src/class190/Code01_CondenseTopo1.java</code>、<code>src/class190/Code02_PickMushroom1.java</code></li>
+<li>C++ 模板：缩点 DAG DP 模板</li>
+<li>习题：做 1 道缩点 + DP 题</li>
+<li>复盘要点：真正难的常在“原图如何转到缩点图”</li>
+<li>完成标准：能在 SCC 缩点后继续完成后续 DP</li>
+</ul>
+<h2 id="week-12">Week 12<a class="headerlink" href="#week-12" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>图论</code></td>
+<td><code>结构原理</code>、<code>专题题</code></td>
+<td>完成边双、点双和圆方树，收束高级图论主线</td>
+</tr>
+</tbody>
+</table>
+<h3 id="34">课程 34：割边与边双连通分量<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握桥和边双结构</li>
+<li>对应原课：191、192</li>
+<li>知识点讲解（C++）：桥的判定、边双缩点、桥树、边双应用</li>
+<li>题目来源（src Java）：<code>src/class191/Code01_CutEdge1.java</code>、<code>src/class192/Code01_PursuitArtifacts1.java</code>、<code>src/class192/Code02_MostBridges1.java</code></li>
+<li>C++ 模板：桥模板、边双缩点模板</li>
+<li>习题：做 2 道边双题</li>
+<li>复盘要点：边双关注的是“删边是否断开”</li>
+<li>完成标准：能分清 SCC、桥、边双的区别</li>
+</ul>
+<h3 id="35">课程 35：割点与点双连通分量<a class="headerlink" href="#35" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：掌握割点、点双与圆方树前置</li>
+<li>对应原课：193</li>
+<li>知识点讲解（C++）：割点判定、点双构造、块点树、点双应用</li>
+<li>题目来源（src Java）：<code>src/class193/Code01_CutVertex1.java</code>、<code>src/class193/Code02_Electricity1.java</code>、<code>src/class193/Code03_Sniffer1.java</code></li>
+<li>C++ 模板：割点模板、点双模板</li>
+<li>习题：做 2 道割点/点双题</li>
+<li>复盘要点：点双关注的是“删点是否断开”</li>
+<li>完成标准：能说明桥/割点/边双/点双的层级关系</li>
+</ul>
+<h3 id="36">课程 36：圆方树<a class="headerlink" href="#36" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：完成 <code>挺难</code> 阶段图论连通性体系收束</li>
+<li>对应原课：194</li>
+<li>知识点讲解（C++）：圆方树构造、块点关系树化、路径问题转树上问题</li>
+<li>题目来源（src Java）：<code>src/class194/Code01_RoadsMeet1.java</code>、<code>src/class194/Code02_NetworkDamage1.java</code></li>
+<li>C++ 模板：圆方树构造模板</li>
+<li>习题：做 1 道圆方树题；复盘整个连通性专题知识图谱</li>
+<li>复盘要点：圆方树是把点双结构树化后的统一表达</li>
+<li>完成标准：能说明圆方树和点双的关系，并写出构造流程</li>
+</ul>
+<h2 id="week-13">Week 13<a class="headerlink" href="#week-13" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>数据结构</code></td>
+<td><code>复盘课</code>、<code>模板课</code></td>
+<td>回收左偏树、可持久化结构、树套树、可撤销并查集等高级结构模板</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>建议内容：按“可并 / 可持久化 / 可撤销 / 二维结构”整理模板</li>
+<li>建议训练：完整重写 2 份最难的数据结构模板</li>
+</ul>
+<h2 id="week-14">Week 14<a class="headerlink" href="#week-14" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>树</code></td>
+<td><code>复盘课</code>、<code>模板课</code></td>
+<td>回收 HLD、DSU on Tree、重构树、虚树、树分治、LCA 进阶</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>建议内容：把树上高级结构做成一张关系图</li>
+<li>建议训练：完成 2 道树上综合题二刷</li>
+</ul>
+<h2 id="week-15">Week 15<a class="headerlink" href="#week-15" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>离线算法/高级技巧</code></td>
+<td><code>复盘课</code>、<code>模板课</code></td>
+<td>回收线段树分治、整体二分、CDQ、分块与莫队体系</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>建议内容：按“按时间离线 / 按答案离线 / 按块离线”三条线整理</li>
+<li>建议训练：默写 3 个离线算法主模板</li>
+</ul>
+<h2 id="week-16">Week 16<a class="headerlink" href="#week-16" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>离线算法/高级技巧</code></td>
+<td><code>综合题</code>、<code>复盘课</code></td>
+<td>集中处理莫队和离线算法综合题，练习模型识别</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>建议内容：重点做带修莫队、树上莫队、二次离线和综合离线统计</li>
+<li>建议训练：做 2 道莫队综合题 + 1 道整体二分/CDQ 综合题</li>
+</ul>
+<h2 id="week-17">Week 17<a class="headerlink" href="#week-17" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>树</code></td>
+<td><code>综合题</code>、<code>复盘课</code></td>
+<td>集中处理树上高级结构综合题，检验树专题是否真正融会贯通</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>建议内容：树链剖分、点分治、边分治、虚树跨专题组合</li>
+<li>建议训练：做 2 道树专题综合题</li>
+</ul>
+<h2 id="week-18">Week 18<a class="headerlink" href="#week-18" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>图论</code></td>
+<td><code>综合题</code>、<code>复盘课</code></td>
+<td>集中处理连通性分解和高级图论综合题</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>建议内容：欧拉路径、SCC、边双、点双、圆方树统一复盘</li>
+<li>建议训练：做 2 道缩点/连通性综合题</li>
+</ul>
+<h2 id="week-19">Week 19<a class="headerlink" href="#week-19" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>综合复盘</code></td>
+<td><code>复盘课</code>、<code>模板课</code></td>
+<td>完成挺难阶段模板重写与错题整理</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>建议内容：整理“我能独立手写的模板”和“我还需要看讲义的模板”</li>
+<li>建议训练：输出一份个人高阶算法模板库</li>
+</ul>
+<h2 id="week-20">Week 20<a class="headerlink" href="#week-20" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>综合复盘</code></td>
+<td><code>复盘课</code></td>
+<td>完成阶段收束，明确下一轮二刷顺序</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>建议内容：把挺难阶段专题重新归类成知识地图</li>
+<li>建议训练：输出“高阶专题二刷计划”</li>
+</ul>
+<h2 id="_6">使用建议<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>这 5 个月优先关注“结构原理 + 模板骨架 + 一道代表题”</li>
+<li>对离线算法类专题，建议额外画流程图，不要只背代码</li>
+<li>对树分治、莫队、线段树分治这类题，建议先口述算法，再写代码</li>
+<li>每周复盘时，把本周专题归入自己的知识图谱：可并结构、可撤销结构、离线分治、树上高级专题、连通性分解</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/mermaid.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

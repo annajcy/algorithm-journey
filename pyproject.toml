@@ -6,4 +6,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "mineru[all]>=2.7.6",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.6.0",
+    "pymdown-extensions>=10.14",
 ]

@@ -1,0 +1,1847 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="C++ algorithm course outlines and study notes">
+      
+      
+      
+      
+        <link rel="prev" href="../overview/">
+      
+      
+        <link rel="next" href="../foundation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>入门 - Algorithm Journey Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Algorithm Journey Notes" class="md-header__button md-logo" aria-label="Algorithm Journey Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Algorithm Journey Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              入门
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+  课程规划
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../notes/intro/week1/lesson1/content/" class="md-tabs__link">
+          
+  
+  
+  正式讲义
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tips/llm-for-competitive-programming/" class="md-tabs__link">
+          
+  
+  
+  学习技巧
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../writing_style/sop/" class="md-tabs__link">
+          
+  
+  
+  写作规范
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Algorithm Journey Notes" class="md-nav__button md-logo" aria-label="Algorithm Journey Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Algorithm Journey Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课程规划
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    课程规划
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入门
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阶段说明
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codeforces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        每日 Codeforces 思维题训练
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本阶段知识地图
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程模板
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速跳转
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分级导航
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分级导航">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#week-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#week1-lesson01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 01：算法学习框架与复杂度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week1-lesson02" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 02：二进制与位运算入门
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week1-lesson03" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 03：基础排序
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week1-lesson04" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 04：对数器与验证习惯
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week1-lesson05" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 05：二分搜索与边界问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#week2-lesson06" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 06：链表基础与入门题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week2-lesson07" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 07：栈、队列、双端队列
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week2-lesson08" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 08：二叉树遍历基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review-flex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机动复习建议
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../foundation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    扩展
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    挺难
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    正式讲义
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    正式讲义
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入门
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    入门
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Week 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/intro/week1/lesson1/content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课程 01：算法学习框架与复杂度
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习技巧
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    学习技巧
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tips/llm-for-competitive-programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM 时代如何更好地学习 Competitive Programming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    写作规范
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    写作规范
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../writing_style/sop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教程写作 SOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阶段说明
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codeforces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        每日 Codeforces 思维题训练
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本阶段知识地图
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程模板
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速跳转
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分级导航
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分级导航">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#week-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#week1-lesson01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 01：算法学习框架与复杂度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week1-lesson02" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 02：二进制与位运算入门
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week1-lesson03" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 03：基础排序
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week1-lesson04" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 04：对数器与验证习惯
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week1-lesson05" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 05：二分搜索与边界问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#week-2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Week 2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Week 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#week2-lesson06" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 06：链表基础与入门题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week2-lesson07" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 07：栈、队列、双端队列
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week2-lesson08" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        课程 08：二叉树遍历基础
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review-flex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机动复习建议
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">入门阶段<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><a href="../overview/">返回课程总览</a></p>
+</blockquote>
+<h2 id="_2">阶段说明<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>适合人群</td>
+<td>有算法竞赛基础，但基础知识点有遗忘</td>
+</tr>
+<tr>
+<td>主语言</td>
+<td>C++</td>
+</tr>
+<tr>
+<td>内容范围</td>
+<td>只覆盖 <code>001-018</code> 的 <code>入门</code> 内容</td>
+</tr>
+<tr>
+<td>前置要求</td>
+<td>基本的 C++ 语法、数组、循环、函数</td>
+</tr>
+<tr>
+<td>推荐学习方式</td>
+<td>先恢复模板和基础题感，再回收数据结构与遍历类基础题</td>
+</tr>
+<tr>
+<td>题目来源说明</td>
+<td><code>src/</code> 中 Java 代码只作为题目来源，讲解与模板全部使用 C++</td>
+</tr>
+<tr>
+<td>练习策略</td>
+<td>主线只做课内练习 + 每日 1 题 CF，不额外铺外部 OJ 题</td>
+</tr>
+<tr>
+<td>建议节奏</td>
+<td>2 周完成，8 课 + 2 次机动复习</td>
+</tr>
+</tbody>
+</table>
+<h2 id="codeforces">每日 Codeforces 思维题训练<a class="headerlink" href="#codeforces" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练定位</td>
+<td>偏 <code>读题 + 实现 + 边界</code>，用简单思维题把竞赛手感重新拉起来</td>
+</tr>
+<tr>
+<td>题目级别</td>
+<td><code>Div2 B</code> 偏简单</td>
+</tr>
+<tr>
+<td>每日题量</td>
+<td>固定 1 题</td>
+</tr>
+<tr>
+<td>建议限时</td>
+<td>25-35 分钟</td>
+</tr>
+<tr>
+<td>执行规则</td>
+<td>先独立思考，再写关键思路，再编码，最后复盘；优先选和当周基础主题接近的题；若超时，最多再看 10 分钟，仍无思路就完成题解复盘并手写重做；这一阶段不建议常态化加到 2 题</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">本阶段知识地图<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>知识域</th>
+<th>训练类型</th>
+<th>为什么这样排</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Week 1</td>
+<td><code>基础编码</code>、<code>数据结构</code></td>
+<td><code>模板课</code>、<code>结构原理</code></td>
+<td>先恢复复杂度、位运算、排序、验证与二分等最基础的刷题动作</td>
+</tr>
+<tr>
+<td>Week 2</td>
+<td><code>数据结构</code>、<code>树</code></td>
+<td><code>结构原理</code>、<code>专题题</code></td>
+<td>把链表、栈队列、二叉树遍历这些最常用结构重新串起来</td>
+</tr>
+<tr>
+<td>机动复习</td>
+<td><code>综合复盘</code></td>
+<td><code>复盘课</code></td>
+<td>用模板默写和代表题重写把基础手感真正找回来</td>
+</tr>
+</tbody>
+</table>
+<p>每周课程主线之外，持续执行 <code>每日 1 题</code> 的 Codeforces 思维训练，且选题尽量贴合本周主题。</p>
+<h2 id="_4">课程模板<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>课程主题</li>
+<li>学习目标</li>
+<li>对应原课</li>
+<li>知识点讲解（C++）</li>
+<li>题目来源（src Java）</li>
+<li>C++ 模板</li>
+<li>习题</li>
+<li>复盘要点</li>
+<li>完成标准</li>
+</ul>
+<p>这条模板用于课程主线；每日 Codeforces 思维题训练按阶段规则单独执行，不展开到 <code>Day 1 ~ Day 7</code>。</p>
+<h2 id="_5">快速跳转<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#week-1">Week 1</a></li>
+<li><a href="#week-2">Week 2</a></li>
+<li><a href="#review-flex">机动复习建议</a></li>
+</ul>
+<h2 id="_6">分级导航<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="week-1">Week 1<a class="headerlink" href="#week-1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="#week1-lesson01">课程 01：算法学习框架与复杂度</a></li>
+<li><a href="#week1-lesson02">课程 02：二进制与位运算入门</a></li>
+<li><a href="#week1-lesson03">课程 03：基础排序</a></li>
+<li><a href="#week1-lesson04">课程 04：对数器与验证习惯</a></li>
+<li><a href="#week1-lesson05">课程 05：二分搜索与边界问题</a></li>
+</ul>
+<h3 id="week-2">Week 2<a class="headerlink" href="#week-2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="#week2-lesson06">课程 06：链表基础与入门题</a></li>
+<li><a href="#week2-lesson07">课程 07：栈、队列、双端队列</a></li>
+<li><a href="#week2-lesson08">课程 08：二叉树遍历基础</a></li>
+</ul>
+<h2 id="week-1_1">Week 1<a class="headerlink" href="#week-1_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>基础编码</code>、<code>数据结构</code></td>
+<td><code>模板课</code>、<code>结构原理</code></td>
+<td>恢复复杂度分析、位运算、排序、对拍和二分模板</td>
+</tr>
+</tbody>
+</table>
+<h3 id="week1-lesson01">课程 01：算法学习框架与复杂度<a class="headerlink" href="#week1-lesson01" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：建立复习主线，恢复复杂度分析和算法学习方法</li>
+<li>对应原课：001、002、007、008</li>
+<li>知识点讲解（C++）：时间复杂度、空间复杂度、常见数据规模与可行解法、C++ 刷题工程习惯</li>
+<li>配套代码（C++）：<a href="../../notes/intro/week1/lesson1/code/language-conversion/">Language Conversion C++ 译写</a>、<a href="../../notes/intro/week1/lesson1/code/experiment/">Experiment C++ 译写</a>、<a href="../../notes/intro/week1/lesson1/code/complexity/">Complexity C++ 译写</a></li>
+<li>C++ 模板：<code>solve()</code> 驱动模板、基础调试模板、复杂度速判 checklist</li>
+<li>习题：总结常见复杂度上界；写一份自己的竞赛/面试 C++ 基础模板</li>
+<li>复盘要点：先估复杂度，再定算法方向</li>
+<li>完成标准：能在 5 分钟内判断常见题目规模对应的可行复杂度</li>
+<li>正式讲义：<a href="../../notes/intro/week1/lesson1/content/">Week 1 课程 01：算法学习框架与复杂度</a></li>
+<li>配套每日 CF：<a href="https://codeforces.com/problemset/problem/2064/B">2064B - Variety is Discouraged</a></li>
+</ul>
+<h3 id="week1-lesson02">课程 02：二进制与位运算入门<a class="headerlink" href="#week1-lesson02" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：恢复二进制表示、补码、位运算基础性质</li>
+<li>对应原课：003</li>
+<li>知识点讲解（C++）：按位与/或/异或、移位、补码、lowbit、位运算常见误区</li>
+<li>题目来源（src Java）：<code>src/class003/BinarySystem.java</code></li>
+<li>C++ 模板：位运算工具函数模板、位枚举模板</li>
+<li>习题：补全常用位操作函数；做 2 道位运算基础题</li>
+<li>复盘要点：位运算先想性质，再写代码</li>
+<li>完成标准：能熟练解释异或、lowbit、补码的含义</li>
+</ul>
+<h3 id="week1-lesson03">课程 03：基础排序<a class="headerlink" href="#week1-lesson03" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：恢复选择、冒泡、插入排序及稳定性概念</li>
+<li>对应原课：004</li>
+<li>知识点讲解（C++）：三种基础排序、稳定性、交换成本与比较次数</li>
+<li>题目来源（src Java）：<code>src/class004/SelectBubbleInsert.java</code></li>
+<li>C++ 模板：选择排序、冒泡排序、插入排序模板</li>
+<li>习题：手写三种排序；比较适用场景</li>
+<li>复盘要点：基础排序主要用来训练循环控制和不变量</li>
+<li>完成标准：能独立写出三种排序并说明稳定性</li>
+</ul>
+<h3 id="week1-lesson04">课程 04：对数器与验证习惯<a class="headerlink" href="#week1-lesson04" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：重新建立“暴力 + 随机测试 + 对拍”的验证习惯</li>
+<li>对应原课：005</li>
+<li>知识点讲解（C++）：随机数据生成、暴力解构造、结果对拍、边界数据覆盖</li>
+<li>题目来源（src Java）：<code>src/class005/Validator.java</code></li>
+<li>C++ 模板：随机生成器模板、暴力对拍模板</li>
+<li>习题：为一个简单数组题写完整对数器</li>
+<li>复盘要点：复习阶段优先修复“会思路但代码不稳”</li>
+<li>完成标准：能对一个基础题完成自动化对拍</li>
+</ul>
+<h3 id="week1-lesson05">课程 05：二分搜索与边界问题<a class="headerlink" href="#week1-lesson05" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：恢复二分模板和边界控制</li>
+<li>对应原课：006</li>
+<li>知识点讲解（C++）：存在性二分、左/右边界、峰值、判定函数</li>
+<li>题目来源（src Java）：<code>src/class006/Code01_FindNumber.java</code>、<code>src/class006/Code02_FindLeft.java</code>、<code>src/class006/Code03_FindRight.java</code>、<code>src/class006/Code04_FindPeakElement.java</code></li>
+<li>C++ 模板：标准二分模板、左边界模板、右边界模板</li>
+<li>习题：手写 3 种二分模板；做 2 道边界查找题</li>
+<li>复盘要点：二分的核心是不变量，不是 while 写法</li>
+<li>完成标准：能不查资料写出 3 种标准二分</li>
+</ul>
+<h2 id="week-2_1">Week 2<a class="headerlink" href="#week-2_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>数据结构</code>、<code>树</code></td>
+<td><code>结构原理</code>、<code>专题题</code></td>
+<td>把链表、栈队列和二叉树遍历这些基础结构重新连成一个体系</td>
+</tr>
+</tbody>
+</table>
+<h3 id="week2-lesson06">课程 06：链表基础与入门题<a class="headerlink" href="#week2-lesson06" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：恢复链表基础操作和常见重连技巧</li>
+<li>对应原课：009、010、011、012</li>
+<li>知识点讲解（C++）：链表反转、合并有序链表、链表加法、链表划分、哑节点</li>
+<li>题目来源（src Java）：<code>src/class009/ListReverse.java</code>、<code>src/class010/MergeTwoLists.java</code>、<code>src/class011/AddTwoNumbers.java</code>、<code>src/class012/PartitionList.java</code></li>
+<li>C++ 模板：单链表节点模板、反转链表模板、合并链表模板</li>
+<li>习题：做 3 道链表基础题；复盘断链和重连顺序</li>
+<li>复盘要点：链表题先画指针变化图</li>
+<li>完成标准：能独立完成反转、合并、分段重连</li>
+</ul>
+<h3 id="week2-lesson07">课程 07：栈、队列、双端队列<a class="headerlink" href="#week2-lesson07" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：恢复线性结构的数组模拟能力</li>
+<li>对应原课：013、014、015、016</li>
+<li>知识点讲解（C++）：数组栈、循环队列、最小栈、双端队列、栈队列互相实现</li>
+<li>题目来源（src Java）：<code>src/class013/QueueStackAndCircularQueue.java</code>、<code>src/class014/ConvertQueueAndStack.java</code>、<code>src/class015/GetMinStack.java</code>、<code>src/class016/CircularDeque.java</code></li>
+<li>C++ 模板：数组栈模板、循环队列模板、双端队列模板、最小栈模板</li>
+<li>习题：手写 4 个结构；做 1 道结构设计题</li>
+<li>复盘要点：数组模拟是后续单调结构和图算法的基础</li>
+<li>完成标准：能不依赖 STL 写出正确的循环队列</li>
+</ul>
+<h3 id="week2-lesson08">课程 08：二叉树遍历基础<a class="headerlink" href="#week2-lesson08" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学习目标：恢复树遍历和递归/非递归等价视角</li>
+<li>对应原课：017、018</li>
+<li>知识点讲解（C++）：先中后序递归、显式栈模拟、层序遍历、复杂度分析</li>
+<li>题目来源（src Java）：<code>src/class017/BinaryTreeTraversalRecursion.java</code>、<code>src/class018/BinaryTreeTraversalIteration.java</code></li>
+<li>C++ 模板：递归遍历模板、非递归遍历模板、层序遍历模板</li>
+<li>习题：手写三序递归；手写前中后序非递归；做 2 道遍历题</li>
+<li>复盘要点：树遍历本质是访问时机控制</li>
+<li>完成标准：能独立写出三序递归和至少两种非递归遍历</li>
+</ul>
+<h2 id="review-flex">机动复习建议<a class="headerlink" href="#review-flex" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>知识域</th>
+<th>训练类型</th>
+<th>本周目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>综合复盘</code></td>
+<td><code>复盘课</code></td>
+<td>用模板默写和题目重写巩固入门阶段所有高频基础动作</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>复习课 A：默写 <code>fast io</code>、二分、链表、栈队列模板</li>
+<li>复习课 B：从以上 8 课中任选 4 个代表题，全部用 C++ 重写一遍</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/mermaid.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
